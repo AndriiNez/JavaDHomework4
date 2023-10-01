@@ -1,0 +1,12 @@
+SELECT c.NAME AS CLIENT_NAME,
+    DATEDIFF(MONTH, p.START_DATE, p.FINISH_DATE) AS MONTH_COUNT
+FROM project p
+JOIN client c ON p.CLIENT_ID = c.ID
+WHERE DATEDIFF(MONTH, p.START_DATE, p.FINISH_DATE) = (
+    SELECT MAX(month_count)
+    FROM (
+        SELECT c1.NAME AS CLIENT_NAME, DATEDIFF(MONTH, p1.START_DATE, p1.FINISH_DATE) AS month_count
+        FROM project p1
+        JOIN client c1 ON p1.CLIENT_ID = c1.ID
+    ) AS month_counts
+);
