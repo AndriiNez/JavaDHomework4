@@ -11,12 +11,12 @@ public class Main {
 
         List<MaxProjectCountClient> maxProjectCountClients = new DatabaseQueryService().findMaxProjectsClient();
         for (MaxProjectCountClient client : maxProjectCountClients) {
-            System.out.println("Client: " + client.getName() + ", Max Project Count: " + client.getProjectCount());
+            System.out.println("Client: " + client.getName() + ", Project Count: " + client.getProjectCount());
         }
 
         List<MaxSalaryWorker> maxSalaryWorkers = new DatabaseQueryService().findMaxSalaryWorker();
         for (MaxSalaryWorker worker: maxSalaryWorkers) {
-            System.out.println("name: " + worker.getName() + ", Salary:" + worker.getSalary());
+            System.out.println("Name: " + worker.getName() + ", Salary:" + worker.getSalary());
         }
 
         List<LongrestProject> longrestProjects = new DatabaseQueryService().findLongrestProject();
