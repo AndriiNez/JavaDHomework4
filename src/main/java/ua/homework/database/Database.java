@@ -1,6 +1,9 @@
 package ua.homework.database;
 
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,29 +12,26 @@ import java.sql.SQLException;
 public class Database {
     private static final Database INSTANCE = new Database();
     private static final String CONNECTION_URL = "jdbc:h2:./test";
-    private Connection connection;
+    private static HikariDataSource dataSource;
 
-    private Database() {
-        try {
-            connection = DriverManager.getConnection(CONNECTION_URL);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+    static {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl(CONNECTION_URL);
+
+
+        dataSource = new HikariDataSource(config);
     }
+
 
     public static Database getInstance() {
         return INSTANCE;
     }
 
-    public Connection getConnection() {
-        return connection;
+    public Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
     }
 
     public void close() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        dataSource.close();
     }
 }
