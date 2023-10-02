@@ -7,7 +7,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        Кожен запит виконуєтся окремо
 
         List<MaxProjectCountClient> maxProjectCountClients = new DatabaseQueryService().findMaxProjectsClient();
         for (MaxProjectCountClient client : maxProjectCountClients) {
