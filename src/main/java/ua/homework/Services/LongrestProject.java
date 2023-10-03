@@ -1,4 +1,4 @@
-package ua.homework.additionalFields;
+package ua.homework.Services;
 
 public class LongrestProject {
     private String clientName;

@@ -15,7 +15,7 @@ public class Database {
     private static HikariDataSource dataSource;
 
 
-    private Database(){
+    private Database() {
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(CONNECTION_URL);
 

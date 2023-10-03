@@ -1,7 +1,6 @@
 package ua.homework;
 
-import ua.homework.additionalFields.*;
-import ua.homework.database.Database;
+import ua.homework.Services.*;
 import ua.homework.request.DatabaseQueryService;
 import java.util.List;
 
