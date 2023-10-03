@@ -1,7 +1,7 @@
 package ua.homework;
 
-import ua.homework.Services.*;
-import ua.homework.request.DatabaseQueryService;
+import ua.homework.dto.*;
+import ua.homework.services.DatabaseQueryService;
 import java.util.List;
 
 public class Main {

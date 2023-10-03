@@ -1,4 +1,4 @@
-package ua.homework.Services;
+package ua.homework.dto;
 
 public class LongrestProject {
     private String clientName;

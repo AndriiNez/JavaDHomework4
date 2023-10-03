@@ -1,4 +1,4 @@
-package ua.homework.request;
+package ua.homework.services;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

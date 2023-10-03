@@ -1,17 +1,15 @@
-package ua.homework.request;
+package ua.homework.services;
 
 import ua.homework.database.Database;
 
-
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DatabasePopulateService {
-    private static final String PATH_POPULATE_DB_SQL = "./sql files/populate_db.sql";
+
+public class DatabaseInitService {
+    private static final String PATH_INIT_DB_SQL = "./sql files/init_db.sql";
 
     public static void main(String[] args) {
         try {
@@ -20,7 +18,7 @@ public class DatabasePopulateService {
             Statement st = conn.createStatement();
 
 
-            String sql = String.join("\n", Files.readAllLines(Paths.get(PATH_POPULATE_DB_SQL)));
+            String sql = String.join("\n", Files.readAllLines(Paths.get(PATH_INIT_DB_SQL)));
 
             st.executeUpdate(sql);
 
@@ -28,10 +26,10 @@ public class DatabasePopulateService {
             st.close();
             conn.close();
 
-
-
-        } catch (IOException | SQLException e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }
+
+

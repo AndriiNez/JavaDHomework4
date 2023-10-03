@@ -1,11 +1,11 @@
-package ua.homework.request;
+package ua.homework.services;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.ArrayList;
 
-import ua.homework.Services.*;
+import ua.homework.dto.*;
 import ua.homework.database.Database;
 
 import java.sql.Connection;
